@@ -110,15 +110,14 @@ function encode6bit(b) {
     if (targetNode) {
       // Start observing the target node for configured mutations
       observer.observe(targetNode, config);
-    }
+    } else {
     
-    const overviewId = 'jira';// 'ghx-detail-view';
-    const overviewElement = document.getElementById(overviewId);
-    
-    console.log(overviewElement);
-    
-    if (overviewElement) {
-      observer.observe(overviewElement, config);
+      const overviewId = 'jira';// 'ghx-detail-view';
+      const overviewElement = document.getElementById(overviewId);
+
+      if (overviewElement) {
+        observer.observe(overviewElement, config);
+      }
     }
   }
   
