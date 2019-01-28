@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        JiraPlantUMLUserScript
 // @include     https://jira.*
-// @version     2
+// @version     3
 // @grant       none
 // @run-at      document-end
 // @noframes    
@@ -79,8 +79,11 @@ function encode6bit(b) {
       const source = el.innerText;
 
       s = unescape(encodeURIComponent(source));
-      const parent = el.parentNode;
-      parent.innerHTML = '<img style="width:100%; height:100%" src="' + 'http://www.plantuml.com/plantuml/img/' + encode64(deflate(s, 9)) + '">';
+      const parent = el.parentNode;      
+      
+      const imageLink = 'http://www.plantuml.com/plantuml/img/' + encode64(deflate(s, 9));
+      
+      parent.innerHTML = '<a href="' + imageLink + '" target="_blank">Open diagram in new window</a><img style="width:100%;" src="' + imageLink + '">';
       parent.classList.remove('codeContent');
       parent.classList.remove('panelContent');
 
