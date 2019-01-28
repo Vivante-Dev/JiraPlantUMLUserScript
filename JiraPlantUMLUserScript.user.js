@@ -7,6 +7,7 @@
 // @noframes    
 // @require     https://raw.githubusercontent.com/johan/js-deflate/master/rawdeflate.js
 // @updateURL   https://raw.githubusercontent.com/vivante-health/JiraPlantUMLUserScript/master/JiraPlantUMLUserScript.user.js
+// @downloadURL https://raw.githubusercontent.com/vivante-health/JiraPlantUMLUserScript/master/JiraPlantUMLUserScript.user.js
 // ==/UserScript==
 
 const selector = 'div.codeContent > pre';
